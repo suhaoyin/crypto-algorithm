@@ -1,0 +1,30 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+.container{
+	position: absolute;
+	left: 30%;
+	top:10%;
+	border: 1px solid red;
+	padding: 10px 50px 30px 50px;
+}
+
+.inputArea{
+	border: 1px dashed red;
+	padding: 10px;
+	margin-bottom: 30px;
+}
+
+.outputArea{
+	border: 1px dashed green;
+	padding: 10px;
+	margin-bottom: 20px;
+	color: green;
+}
+
+/* #p-dec,#p-enc{
+	font-size: 0.8em;
+	font-weight: bold;
+} */

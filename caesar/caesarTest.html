@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>caesarTest</title>
+	<script type="text/javascript" src="caesarJs.js"></script>
+	<link rel="stylesheet" type="text/css" href="default.css">
+</head>
+<body>
+	<div class="container">
+		<section class="inputArea">
+			<label for="i-txt">明文：</label>
+			<input type="text" class="c-txt" id="i-txt" maxlength="35">
+			<input type="button" value="明文加密" id="btn-encry" onclick="encryLis();">
+			<br/><br/>
+			<label for="i-txt2">密文：</label>
+			<input type="text" class="c-txt" id="i-txt2" maxlength="35">
+			<input type="button" value="密文解密" id="btn-decry" onclick="decryLis();">
+			<br/><br/>
+			<label for="k-input">K值：</label>
+			<input type="text" id="k-input" maxlength="2">
+		</section>
+		<section class="outputArea" id="p-dec">
+			<p>已加密明文：</p>
+			<p></p>
+		</section>
+		<section class="outputArea" id="p-enc">
+			<p>已解密明文：</p>
+			<p></p>
+		</section>
+	</div>
+</body>
+</html>

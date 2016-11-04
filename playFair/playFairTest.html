@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>playFair</title>
+	<script type="text/javascript" src="playFairJs.js"></script>
+</head>
+<body>
+	<label for="key">秘钥：</label>
+	<input type="text" maxlength="10" id="key">
+	<br/>
+	<label for="txt">明文：</label>
+	<input type="text" maxlength="100" id="txt">
+	<br/>
+	<label for="secrect">密文：</label>
+	<input type="text" maxlength="150" id="secrect">
+	<br/>
+	<input type="button" value="加密" id="lock" onclick="lock()">
+	<input type="button" value="解密" id="unlock" onclick="unlock()">
+</body>
+</html>

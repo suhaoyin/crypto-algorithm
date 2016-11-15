@@ -6,6 +6,9 @@
 	<script type="text/javascript" src="playFairJs.js"></script>
 </head>
 <body>
+	<p>测试密钥：monarchy</p>
+	<p>测试明文：we are discovered save yourself</p>
+	<p>测试密文：UGRMKCSXHMUFMKBTOXGCMVATLUGE</p>
 	<label for="key">秘钥：</label>
 	<input type="text" maxlength="10" id="key">
 	<br/>
@@ -15,7 +18,9 @@
 	<label for="secrect">密文：</label>
 	<input type="text" maxlength="150" id="secrect">
 	<br/>
+	<input type="button" value="生成密码表" id="showTable" onclick="showTable()">
 	<input type="button" value="加密" id="lock" onclick="lock()">
 	<input type="button" value="解密" id="unlock" onclick="unlock()">
+	<div id="show"></div>
 </body>
 </html>

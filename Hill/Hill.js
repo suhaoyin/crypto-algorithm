@@ -51,22 +51,3 @@ function lock () {
 	console.log(temp);
 	alert("明文加密后："+temp);
 }
-
-/**
-*unlock 用于解密
-*/
-function unlock () {
-	var decode = document.getElementById("secrect").value.toUpperCase().replace(/\s/ig,'');
-	var transRandomKey = createTransRandomKey(randomKey);
-	/*for(var i=0;i<3;i++){
-		for(var k=0;k<3;k++)
-			console.log(transRandomKey[i][k]);
-	}*/
-}
-
-/**
-*传入随机密钥矩阵并返回逆矩阵
-*/
-function createTransRandomKey(arr){
-	
-}

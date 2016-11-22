@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>Alice</title>
+<script language="javascript">
+<!-- hide from old browsers
+var newWindow = null
+
+function MakeArray(n) {
+     this.length = n
+     for (var i = 1; i <= n; i++) {
+          this[i] = 0
+     }
+     return this
+}
+
+
+cipher = new MakeArray(10)
+cipher[1] = "A"
+cipher[2] = "B"
+cipher[3] = "C"
+cipher[4] = "D"
+cipher[5] = "E"
+cipher[6] = "F"
+cipher[7] = "G"
+cipher[8] = "H"
+cipher[9] = "I"
+cipher[10] = "J"
+
+function result(form) {
+var C = form.message.value
+var N = form.Nvalue.value
+var D = form.key.value
+
+if ( D % 2 == 0) {
+     G = 1
+     for ( var i = 1; i <= D/2; i++) {
+               F = (C*C) % N
+               G = (F*G) % N
+     }
+} else {
+     G = C
+     for ( var i = 1; i <= D/2; i++) {
+               F = (C*C) % N
+               G = (F*G) % N
+     }
+}
+
+cipher = cipher[G]
+
+if (newWindow == null) {
+     var newWindow = window.open("","","height=250,width=200")
+     }
+     newWindow.document.write("<html><body bgcolor='FFFFFF'>")
+
+     newWindow.document.write("密文将会用以下方法解密：")
+     newWindow.document.write("<p>")
+     newWindow.document.write(" M = C^D mod N = "+C+"^"+D+" mod ")
+     newWindow.document.write(N +" = "+ G)
+     newWindow.document.write("<p>"+G+" 已被转换成字母 ")
+     newWindow.document.write("原本的字母(明文)是 " + cipher)
+     newWindow.document.write("<p>算法已完成！")
+     newWindow.document.write("</body></html>")
+     newWindow.document.close()
+
+}
+
+// end script hiding -->
+</script>
+
+<body>
+
+<center>
+<h1>解密页</h1>
+</center>
+
+<font size=+1>
+<b>目的：</b><br>
+这是理解RSA算法的最后一步。
+目的是通过所知道的私钥对，D和N解密被加密的信息。
+</font>
+
+<p>
+<hr>
+<p>
+
+<form>
+请输入密文: <input type="text" name="message" value=0>
+<p>
+请输入你的N值： <input type="text" name="Nvalue" value=0>
+<p>
+请输入你的私钥D： <input type="text" name="key" value=0>
+<p>
+<input type="button" value="Proceed" onClick="result(this.form)">
+
+</form>
+
+<p>
+<center>
+    <a href="Bob.html">prev << 加密页</a> 
+  </center>
+
+</body>
+</html>

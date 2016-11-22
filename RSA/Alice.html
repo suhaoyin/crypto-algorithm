@@ -1,0 +1,146 @@
+<html>
+<head>
+<script>
+<!-- hide from old browsers
+var newWindow = null
+
+function GCD(e,PHI) {
+if (e > PHI) {
+     while (e%PHI != 0) {
+          a = e%PHI
+          e = PHI
+          PHI = a
+     }
+     great = PHI
+} else {
+     while (PHI%e != 0) {
+          a = PHI%e
+          PHI = e
+          e = a
+     }
+     great = e
+}
+return great
+}
+
+function tofindE(PHI,P,Q) {
+great = 0
+e = 2
+while (great != 1) {
+     e = e + 1
+     great = GCD(e,PHI)
+     PHI = (P - 1) * (Q - 1)
+}
+return e
+}
+
+function extend(E,PHI) {
+u1 = 1
+u2 = 0
+u3 = PHI
+v1 = 0
+v2 = 1
+v3 = E     
+
+while (v3 != 0) {
+     q = Math.floor(u3/v3)
+     t1 = u1 - q * v1
+     t2 = u2 - q * v2
+     t3 = u3 - q * v3
+
+     u1 = v1
+     u2 = v2 
+     u3 = v3
+
+     v1 = t1
+     v2 = t2
+     v3 = t3
+     z = 1
+}
+uu = u1
+vv = u2
+
+if (vv < 0) {
+          inverse = vv + PHI
+} else {
+     inverse = vv
+}
+return inverse
+}    
+ 
+
+function result(form) {
+var P = (form.prime1.options[form.prime1.selectedIndex].value)
+var Q = (form.prime2.options[form.prime2.selectedIndex].value)
+PHI = (P - 1) * (Q - 1)
+E = tofindE(PHI,P,Q)
+if (newWindow == null) {
+     var newWindow = window.open("","","height=200,width=400")
+     }
+     newWindow.document.write("<html><body><b>")
+     newWindow.document.write("N = P x Q = " + P + "x " + Q + "= ")
+     newWindow.document.write(P * Q)
+     newWindow.document.write("</b><br>")
+     newWindow.document.write("PHI = (P-1)(Q-1) = " + PHI)
+     newWindow.document.write("<br>")
+     
+     newWindow.document.write("<b>E = " + E)
+     newWindow.document.write("</b><br/>")
+     
+     newWindow.document.write("<b>D = " + extend(E,PHI))
+     newWindow.document.write("</b><p>")
+
+     newWindow.document.write("</body> </html>")
+     newWindow.document.close()
+}
+
+// end script hiding -->
+</script>
+<title>Alice</title>
+</head>
+
+<body bgcolor="FFFFFF">
+
+<center>
+<h1>KEY生成页(Alice)</H1>
+</center>
+
+<font size=+1>
+<b>目的：</b><br>
+本网页的目的是生成一个公钥对和私钥对，选择两个可用的素数。在实际的密码系统，使用非常大的素数。
+</font>
+
+<p>
+通过输入两个素数，P和Q，计算机将产生N，E和D。E和N是公钥对，而D和N分别为私有密钥对。
+
+<p>
+<hr>
+<p>
+选择2个素数(P & Q):
+
+<form>
+<select name="prime1">
+<option value="5" selected>5
+<option value="7">7 <option value="11">11 <option value="13">13
+<option value="17">17 <option value="19">19 <option value="23">23
+<option value="29">29 <option value="31">31 <option value="37">37
+
+</select>
+
+<select name="prime2">
+<option selected value="3">3 <option value="5">5
+<option value="7">7 <option value="11">11 <option value="13">13
+<option value="17">17 <option value="19">19 <option value="23">23
+</select>
+
+<p>
+
+<input type="button" value="Proceed" onClick="result(this.form)">
+</form>
+
+<p>
+<center>
+    <a href="Bob.html" target="">next >> 加密页</a>
+  </center>
+</body>
+</html>

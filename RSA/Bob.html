@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Bob</title>
+<script language="javascript">
+<!-- hide from old browsers
+var newWindow = null
+
+function result(form) {
+var M = (form.message.options[form.message.selectedIndex].value)
+var U = (form.message.options[form.message.selectedIndex].text)
+var E = form.exponent.value
+var N = form.Nvalue.value
+
+C = Math.pow(M,E) % N
+
+if (newWindow == null) {
+     var newWindow = window.open("","","height=200,width=300")
+     }
+     newWindow.document.write("<html><body bgcolor='FFFFFF'>")
+
+     newWindow.document.write("字母"+U+"已经被转换为数字："+M)
+
+     newWindow.document.write("<p> C = M^E mod N = ")
+     newWindow.document.write(M + "^" + E+" mod "+N+" = "+C)
+     newWindow.document.write("<p>因此，密文为<b>" + C)
+     newWindow.document.write("</b>")
+     newWindow.document.write("</body></html>")
+     newWindow.document.close()
+
+}
+
+// end script hiding -->
+</script>
+
+<body bgcolor="FFFFFF">
+
+<center>
+<h1>加密页</H1>
+</CENTER>
+
+<font size=+1>
+<b>目的：</b><br>
+目的是使用加密算法RSA加密一个字母。知知悉E和N是必需的。
+</font>
+<p>
+
+<b>记录加密的消息！</b>
+<p>
+<hr>
+<p>
+
+
+<form>
+<p>
+选择一个字母作为密码/明文：
+<select name="message">
+<option selected value="1">A <option value="2">B <option value="3">C
+<option value="4">D <option value="5">E <option value="6">F
+<option value="7">G <option value="8">H <option value="9">I
+<option value="10">J 
+
+</select>
+
+<p>
+
+请输入Alice(Key生成页)的加密密钥E：<input type="text" name="exponent" value=0>
+
+<p>
+
+请输入Alice(Key生成页)的N值 ：<input type="text" name="Nvalue" value=0>
+<p>
+<input type="button" value="Encrypt" onClick="result(this.form)"><p>
+
+</form>
+<center>
+    <a href="Alice.html">prev << KEY生成页</a>
+  <a href="Alice2.html" target="">解密页 >> next</a>
+  </center>
+
+</center>
+
+</body>
+
+</html>

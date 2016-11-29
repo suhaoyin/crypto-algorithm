@@ -8,7 +8,7 @@ var de_out = document.getElementById("p-enc");
 /*logic*/
 function encryLis () {
 	var en_ined="";
-	var en_in = document.getElementById("i-txt").value;
+	var en_in = document.getElementById("i-txt").value.replace(/\s/ig,'');
 	var k_value = document.getElementById("k-input").value;
 	if (k_value==="") {
 		alert('k值为null');
@@ -44,7 +44,7 @@ function encryLis () {
 
 function decryLis(){
 	var de_ined="";
-	var de_in = document.getElementById("i-txt2").value;
+	var de_in = document.getElementById("i-txt2").value.replace(/\s/ig,'');
 	var k_value = document.getElementById("k-input").value;
 
 	if (k_value==="") {
